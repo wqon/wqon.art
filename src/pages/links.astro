@@ -1,0 +1,32 @@
+---
+import "../styles/links.css";
+import Head from "../components/head.astro";
+
+const pageTitle = "WQON [vekonn] — Pixel Artist & Type Designer";
+---
+
+<html lang="en">
+    <head>
+        <title>{pageTitle}</title>
+        <meta
+            name="description"
+            content="WQON — A pixel artist and type designer from Czechia."
+        />
+        <Head />
+    </head>
+    <body>
+        <!-- LIGHT -->
+        <div class="light">
+            <div class="l-left">test</div>
+            <div class="l-gap"></div>
+            <div class="l-right">test</div>
+        </div>
+
+        <!-- DARK -->
+        <div class="dark">
+            <div class="d-left"></div>
+            <div class="d-gap"></div>
+            <div class="d-right"></div>
+        </div>
+    </body>
+</html>
