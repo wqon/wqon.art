@@ -1,0 +1,21 @@
+:root {
+    --bg: #cccccc;
+    --accent: #ff3644;
+    --white: #fcfcfc;
+    --black: #080808;
+}
+::selection {
+    background: var(--accent);
+    color: var(--white);
+}
+
+#bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
