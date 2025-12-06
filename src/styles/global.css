@@ -10,13 +10,17 @@
 }
 
 html {
-    font-size: 16px;
     background-color: var(--bg);
+    font-size: 16px;
+    text-align: center;
+    text-wrap: wrap;
+    overflow: auto;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 body {
     background-color: var(--bg);
-    overflow: auto;
     height: 100%;
     width: 100%;
     padding: 3rem;
@@ -28,9 +32,10 @@ img {
     display: block;
     max-width: 100%;
     max-height: 100%;
+    pointer-events: none;
+    image-rendering: pixelated;
     padding: 0;
     margin: 0;
-    pointer-events: none;
 }
 
 #bar {
