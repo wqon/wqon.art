@@ -1,59 +1,79 @@
 :root {
     --bg: #cccccc;
-    --accent: #ff3644;
-    --white: #fcfcfc;
-    --black: #080808;
-}
-::selection {
-    background: var(--accent);
-    color: var(--white);
-}
-
-html {
-    background: var(--bg);
 }
 
 body {
     color: var(--black);
-    padding: 3rem;
+    padding: 0;
     margin: 0;
 }
 
-.light {
+.links {
     display: flex;
-    flex-direction: row;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
-.l-left {
+.l-links,
+.d-links {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 64px 32px;
+    gap: 16px;
+}
+.links-left {
     flex: 1;
-    width: 100%;
-    background: red;
+    max-width: 100%;
+    background: white;
 }
-.l-gap {
-    flex: 0.08;
-}
-.l-right {
+.links-right {
     flex: 1;
-    width: 100%;
-    background: blue;
+    max-width: 100%;
+    background: white;
 }
 
+/* LIGHT x DARK */
 @media (prefers-color-scheme: light) {
-    .dark {
+    .d-links {
         display: none;
     }
 }
-
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #6363ff;
-        --white: #636363;
-        --black: #fcfcfc;
+        --bg: #080808;
+    }
+    body {
+        background-color: var(--bg);
     }
 
-    .light {
+    .l-links {
         display: none;
+    }
+}
+
+/* RESPONSIVE */
+@media (min-width: 0px) and (max-width: 600px) {
+    .l-links,
+    .d-links {
+        flex-direction: column-reverse;
+        width: 100%;
+        padding: 32px 16px;
+        gap: 0;
+    }
+}
+@media (min-width: 600px) and (max-width: 1200px) {
+    .l-links,
+    .d-links {
+        width: 800px;
+    }
+}
+@media (min-width: 1200px) and (max-width: 2200px) {
+    .l-links,
+    .d-links {
+        width: 1000px;
     }
 }
