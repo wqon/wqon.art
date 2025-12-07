@@ -27,12 +27,10 @@ body {
 }
 .links-left {
     flex: 1;
-    background-color: var(--fc);
     max-width: 100%;
 }
 .links-right {
     flex: 1;
-    background-color: var(--fc);
     max-width: 100%;
 }
 
