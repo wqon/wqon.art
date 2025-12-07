@@ -22,18 +22,26 @@ body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding: 64px 32px;
-    gap: 16px;
+    padding: 4rem 2rem;
+    gap: 32px;
 }
 .links-left {
     flex: 1;
+    background-color: var(--fc);
     max-width: 100%;
-    background: white;
 }
 .links-right {
     flex: 1;
+    background-color: var(--fc);
     max-width: 100%;
-    background: white;
+}
+
+div#active:hover {
+    transform: scale(110%);
+}
+
+div#active {
+    transition: transform 0.3s ease-out;
 }
 
 /* LIGHT x DARK */
@@ -61,7 +69,7 @@ body {
     .d-links {
         flex-direction: column-reverse;
         width: 100%;
-        padding: 32px 16px;
+        padding: 2rem 1rem;
         gap: 0;
     }
 }
