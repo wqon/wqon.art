@@ -1,7 +1,8 @@
 ---
 import Head from "../components/head.astro";
-import Footer from "../components/footer.astro";
 import Bar from "../components/bar.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
 
 const pageTitle = "WQON [vekonn] — Pixel Artist & Type Designer";
 ---
@@ -17,11 +18,10 @@ const pageTitle = "WQON [vekonn] — Pixel Artist & Type Designer";
     </head>
     <body>
         <Bar />
+        <Header />
         <main>
-            <div
-                style="font-size: 1.8em; font-family: monospace; line-height: 1.6; display: grid; place-items: center; height: 100vh;"
-            >
-                <p>
+            <div class="section-large">
+                <p class="medium">
                     Hey! Glad to see you here...<br />
                     but, I’m still developing my website/artshop.<br />
                     <br />
@@ -31,7 +31,7 @@ const pageTitle = "WQON [vekonn] — Pixel Artist & Type Designer";
                     Thank you for visiting and come again later! ^..^
                 </p>
             </div>
-            <Footer />
         </main>
+        <Footer />
     </body>
 </html>

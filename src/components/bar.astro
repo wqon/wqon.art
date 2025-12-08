@@ -1,3 +1,80 @@
-<div id="bar">
-    <p>I'm developing this page from scratch by myself — it is still in progress. ^ ^</p>
+<!-- CSS -->
+<style>
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+.bar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background-color: var(--accent-soft);
+    color: var(--blue);
+    padding: 0;
+    margin: 0;
+    z-index: 63;
+}
+.bar-scroll {
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    mask-image: linear-gradient(to right, transparent, black 16%, black 82%, transparent);
+    mask-size: 100%;
+}
+.bar-scroll .inner {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: scroll 36s linear infinite;
+    will-change: transform;
+}
+.bar-scroll .inner span {
+    line-height: 48px;
+    margin-left: 3rem;
+}
+.bar-scroll .inner:hover {
+    animation-play-state: paused;
+    color: var(--wnt-blue);
+    cursor: pointer;
+}
+</style>
+
+<!-- HTML -->
+<div class="bar">
+    <div class="bar-scroll">
+        <div class="inner medium">
+            <span>
+                I'm developing this page from scratch by myself — it is still in
+                progress. ^ ^
+            </span>
+            <span>
+                I'm developing this page from scratch by myself — it is still in
+                progress. ^ ^
+            </span>
+            <span>
+                I'm developing this page from scratch by myself — it is still in
+                progress. ^ ^
+            </span>
+            <span>
+                I'm developing this page from scratch by myself — it is still in
+                progress. ^ ^
+            </span>
+            <span>
+                I'm developing this page from scratch by myself — it is still in
+                progress. ^ ^
+            </span>
+            <span>
+                I'm developing this page from scratch by myself — it is still in
+                progress. ^ ^
+            </span>
+        </div>
+    </div>
 </div>

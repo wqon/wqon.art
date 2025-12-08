@@ -1,0 +1,56 @@
+<!-- CSS -->
+<style>
+    header {
+        position: sticky;
+        top: 48px;
+        backdrop-filter: blur(0.5);
+        z-index: 62;
+    }
+    .header-wrapper {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 1rem 3rem;
+    }
+    .header-left {
+        display: flex;
+        flex: 1;
+        justify-content: left;
+        align-items: center;
+        text-align: left;
+        color: var(--fc);
+    }
+    .header-right {
+        display: flex;
+        flex: 1;
+        justify-content: right;
+        align-items: center;
+        text-align: right;
+        color: var(--fc);
+    }
+    
+    img#logo {
+        height: auto;
+        width: 256px;
+    }
+</style>
+
+<!-- HTML -->
+<header>
+    <div class="header-wrapper">
+        <div class="header-left">
+            <img
+                src="/assets/logo-white.png"
+                id="logo"
+                alt="WQON — Pixel Dracologist"
+            />
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </div>
+</header>

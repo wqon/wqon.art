@@ -8,6 +8,7 @@ body {
     margin: 0;
 }
 
+/* LAYOUT */
 .links {
     display: flex;
     min-height: 100vh;
@@ -34,15 +35,22 @@ body {
     max-width: 100%;
 }
 
+/* ANIMATIONS */
 div#active:hover {
     transform: scale(110%);
 }
-
 div#active {
     transition: transform 0.3s ease-out;
 }
 
-/* LIGHT x DARK */
+div#dragon:hover {
+    transform: scale(110%);
+}
+div#dragon {
+    transition: transform 6s ease;
+}
+
+/* LIGHT-DARK */
 @media (prefers-color-scheme: light) {
     .d-links {
         display: none;
@@ -68,7 +76,12 @@ div#active {
         flex-direction: column-reverse;
         width: 100%;
         padding: 2rem 1rem;
+    }
+    .l-links {
         gap: 0;
+    }
+    .d-links {
+        gap: 64px;
     }
 }
 @media (min-width: 600px) and (max-width: 1200px) {

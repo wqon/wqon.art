@@ -5,6 +5,7 @@
     --blue: #0008cc;
     --blue-soft: #6363ff;
     --yellow: #ffff63;
+    --pink: #f88ff8;
     --wnt-blue: #0008ff;
     --wnt-orange: #ff8000;
     --fc: #fcfcfc;
@@ -14,36 +15,112 @@
     --36: #363636;
     --21: #212121;
     --08: #080808;
+    --x-small: 0.6rem;
+    --small: 0.8rem;
+    --normal: 1rem;
+    --medium: 1.2rem;
+    --large: 1.6rem;
+    --x-large: 1.8rem;
+    --section-small: 36vh;
+    --section-medium: 63vh;
+    --section-large: 100vh;
 }
 ::selection {
-    background: var(--wnt-orange);
-    color: var(--wnt-blue);
+    background: var(--accent-soft);
+    color: var(--blue);
 }
 
-html {
-    background-color: var(--bg);
-    font-size: 16px;
-}
-
-body {
-    background-color: var(--bg);
-    font-size: 0.8em;
-    max-height: 100%;
-    max-width: 100%;
-    text-align: center;
-    text-wrap: wrap;
-    overflow: auto;
+* {
+    box-sizing: border-box;
     overflow-wrap: break-word;
+}
+html {
+    background: var(--bg);
+    color: var(--08);
+    font-size: 18px;
+    line-height: 1.4;
+}
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+main {
+    overflow: auto;
     white-space: normal;
+    padding: 1rem 3rem;
+}
+
+/* PRESET-SIZING */
+.x-small {
+    font-size: var(--x-small);
+}
+.small {
+    font-size: var(--small);
+}
+.medium {
+    font-size: var(--medium);
+}
+.large {
+    font-size: var(--large);
+}
+.x-large {
+    font-size: var(--x-large);
+}
+.section-small {
+    display: flex;
+    height: var(--section-small);
+    align-items: center;
+}
+.section-medium {
+    display: flex;
+    height: var(--section-medium);
+    align-items: center;
+}
+.section-large {
+    display: flex;
+    height: var(--section-large);
+    align-items: center;
+}
+
+/* ELEMENTS */
+h1 {
+    font-size: var(--x-large);
+}
+h2 {
+    font-size: var(--large);
+}
+h3 {
+    font-size: var(--medium);
+}
+h4,
+h5,
+h6 {
+    font-size: var(--normal);
+}
+
+a {
+    color: var(--yellow);
+    text-decoration: none;
+    transition: color 0.6s ease;
+}
+a:hover {
+    color: var(--accent-soft);
+}
+a:active {
+    color: var(--blue-soft);
+}
+
+hr {
+    background: var(--08);
+    height: 1px;
+    width: 100%;
+    border: none;
     padding: 0;
     margin: 0;
 }
 
-main {
-    padding: 3rem;
-}
-
-/* ELEMENTS */
 img {
     display: block;
     width: 100%;
@@ -52,15 +129,4 @@ img {
     image-rendering: smooth;
     padding: 0;
     margin: 0;
-}
-
-#bar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: var(--08);
-    color: var(--accent-soft);
-    font-size: 1.3em;
-    text-align: center;
-    padding: 1.3rem;
 }
