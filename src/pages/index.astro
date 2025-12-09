@@ -15,11 +15,18 @@ const pageTitle = "WQON [vekonn] — Pixel Artist & Type Designer";
             content="WQON — a pixel artist and type designer from Czechia."
         />
         <Head />
+        <style is:global>
+        .menu.art {
+            background: var(--menu-active) !important;
+        }
+        </style>
     </head>
     <body>
-        <Bar />
-        <Header />
+        <aside>
+            <Bar />
+        </aside>
         <main>
+            <Header />
             <div class="section-large">
                 <p class="medium">
                     Hey! Glad to see you here...<br />
@@ -31,7 +38,13 @@ const pageTitle = "WQON [vekonn] — Pixel Artist & Type Designer";
                     Thank you for visiting and come again later! ^..^
                 </p>
             </div>
+            <div
+                class="slideshow"
+                div
+                style="position: fixed; bottom: 0; left: 0; right: 0;"
+            >
+                <Footer />
+            </div>
         </main>
-        <Footer />
     </body>
 </html>

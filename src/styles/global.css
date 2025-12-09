@@ -23,7 +23,11 @@
     --x-large: 1.8rem;
     --section-small: 36vh;
     --section-medium: 63vh;
-    --section-large: 100vh;
+    --section-large: 88vh;
+    --gap: 1rem;
+    --bar-gap: 48px;
+    --site-gap: 3rem;
+    --menu-active: #fcfcfc;
 }
 ::selection {
     background: var(--accent-soft);
@@ -39,17 +43,19 @@ html {
     color: var(--08);
     font-size: 18px;
     line-height: 1.4;
+    padding: 0;
+    margin: 0;
 }
 body {
+    overflow: auto;
+    white-space: normal;
     height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;
 }
 main {
-    overflow: auto;
-    white-space: normal;
-    padding: 1rem 3rem;
+    padding: 1rem var(--site-gap);
 }
 
 /* PRESET-SIZING */
@@ -101,15 +107,15 @@ h6 {
 }
 
 a {
-    color: var(--yellow);
+    color: var(--blue-soft);
     text-decoration: none;
     transition: color 0.6s ease;
 }
 a:hover {
-    color: var(--accent-soft);
+    color: var(--blue);
 }
 a:active {
-    color: var(--blue-soft);
+    color: var(--yellow);
 }
 
 hr {
