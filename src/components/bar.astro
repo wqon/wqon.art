@@ -9,14 +9,14 @@
     }
 }
 .bar {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: var(--bar-gap);
     padding: 0;
     margin: 0;
-    z-index: 63;
+    z-index: 98;
 }
 .bar-scroll {
     top: 0;
@@ -50,6 +50,7 @@
 </style>
 
 <!-- HTML -->
+<aside>
 <div class="bar">
     <div class="bar-scroll">
         <div class="inner medium">
@@ -80,3 +81,4 @@
         </div>
     </div>
 </div>
+</aside>

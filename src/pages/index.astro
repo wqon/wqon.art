@@ -2,6 +2,7 @@
 import Head from "../components/head.astro";
 import Bar from "../components/bar.astro";
 import Header from "../components/header.astro";
+import Pixelviewer from "../components/pixelviewer.astro";
 import Footer from "../components/footer.astro";
 
 const pageTitle = "WQON [vekonn] — Pixel Artist & Type Designer";
@@ -16,35 +17,24 @@ const pageTitle = "WQON [vekonn] — Pixel Artist & Type Designer";
         />
         <Head />
         <style is:global>
-        .menu.art {
-            background: var(--menu-active) !important;
-        }
+            .art {
+                background: var(--menu-active) !important;
+            }
+
+            footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
         </style>
     </head>
     <body>
-        <aside>
-            <Bar />
-        </aside>
+        <Bar />
         <main>
             <Header />
-            <div class="section-large">
-                <p class="medium">
-                    Hey! Glad to see you here...<br />
-                    but, I’m still developing my website/artshop.<br />
-                    <br />
-                    You can see my <b
-                        ><a href="/links" rel="nofollow">links</a></b
-                    > instead!<br />
-                    Thank you for visiting and come again later! ^..^
-                </p>
-            </div>
-            <div
-                class="slideshow"
-                div
-                style="position: fixed; bottom: 0; left: 0; right: 0;"
-            >
-                <Footer />
-            </div>
+            <Pixelviewer />
+            <Footer />
         </main>
     </body>
 </html>
