@@ -1,10 +1,79 @@
+<!-- CSS -->
+<style>
+    .pf-wrapper {
+        display: grid;
+        grid-template-rows: fit-content(1fr) 1fr;
+        overflow: hidden;
+    }
+    .pf-header {
+        border-top: 1px solid var(--08);
+        border-bottom: 1px solid var(--08);
+        padding: var(--site-gap);
+    }
+    .pf-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0;
+    }
+    .portfolio figure {
+        display: flex;
+        flex-flow: column;
+        cursor: zoom-in;
+        transition: all 0.1s ease;
+    }
+    .portfolio figure:hover {
+        transform: scale(104%);
+    }
+    .pflb-img {
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+    }
+    .portfolio figcaption {
+        text-align: center;
+        font-size: var(--normal);
+        padding: var(--small) var(--x-small);
+    }
+</style>
+
+<!-- HTML -->
 <section class="portfolio">
     <!-- #PixelDragons -->
-    <div class="pf-section">
-        <div class="pf-artworks"></div>
+    <div class="pf-wrapper">
+        <div class="pf-header">
+            <h1>Pixel Dragons</h1>
+            <p>Text</p>
+        </div>
+        <div class="pf-gallery">
+            <figure>
+                <img
+                    src="/portfolio/pixel-dragons/P2.png"
+                    class="pflb-img"
+                    alt="Breeze of Skies — 2025, 210x297px, 6 colors"
+                />
+                <figcaption style="color: #FFBE63; background: #63A4FF">
+                    Breeze of Skies — 2025, 210x297px, 6 colors
+                </figcaption>
+            </figure>
+            <figure>
+                <img
+                    src="/portfolio/pixel-dragons/P3.png"
+                    class="pflb-img"
+                    alt="The Spark Caster — 2025, 210x297px, 6 colors"
+                />
+                <figcaption style="color: #FFF475; background: #FFAF75">
+                    The Spark Caster — 2025, 210x297px, 6 colors
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="/portfolio/pixel-dragons/P4.png" class="pflb-img" />
+            </figure>
+            <figure>
+                <img src="/portfolio/pixel-dragons/P2.png" class="pflb-img" />
+            </figure>
+        </div>
     </div>
     <!-- LIGHTBOX -->
-    <div class="lightbox">
+    <div class="pf-lightbox">
         <img src="" />
     </div>
 </section>
