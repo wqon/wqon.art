@@ -1,0 +1,51 @@
+---
+import Head from "../components/head.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+
+const pageTitle = "Oops.. 404! :( - WQON";
+---
+
+<html lang="en">
+    <head>
+        <title>{pageTitle}</title>
+        <meta name="description" content="Page not found! :(" />
+        <meta name="robots" content="noindex" />
+        <Head />
+        <script type="text/javascript">
+            const oops404 = () => {
+                let countdown = 9;
+                const interval = setInterval(function () {
+                    document.getElementById("oops404").innerHTML = --countdown;
+                    if (countdown <= 0) {
+                        clearInterval(interval);
+                        window.location.href = "/";
+                    }
+                }, 1000);
+            };
+            oops404();
+        </script>
+    </head>
+
+    <body>
+        <Header />
+        <main>
+            <section>
+                <div class="site-gap center" style="text-align: center;">
+                    <h1>Oops! 😱</h1>
+                    <p class="medium">
+                        <span>
+                            The page you are looking for does not exist, sorry.
+                        </span>
+                        <br />
+                        <span>
+                            You will be redirected to <a href="/">home</a> in...
+                        </span>
+                        <span id="oops404"></span>
+                    </p>
+                </div>
+            </section>
+        </main>
+        <Footer />
+    </body>
+</html>

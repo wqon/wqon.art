@@ -1,0 +1,88 @@
+<!-- CSS -->
+<style>
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+    .bar {
+        grid-row: 1;
+        position: fixed;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        max-width: 100%;
+        line-height: var(--bar-gap);
+        padding: 0;
+        margin: 0;
+        z-index: 99;
+    }
+    .bar-scroll {
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 16%,
+            black 84%,
+            transparent
+        );
+        mask-size: 100%;
+    }
+    .bar-scroll .inner {
+        display: inline-flex;
+        white-space: nowrap;
+        animation: scroll 36s linear infinite;
+        will-change: transform;
+    }
+    .bar-scroll .inner span,
+    .bar-scroll .inner a {
+        line-height: 0;
+        margin-left: var(--site-gap);
+        transition: color 0.6s ease;
+    }
+    .bar-scroll .inner:hover {
+        animation-play-state: paused;
+        color: var(--wnt-blue);
+    }
+    .bar-scroll .inner:active {
+        color: var(--yellow);
+    }
+</style>
+
+<!-- HTML -->
+<aside>
+    <div class="bar">
+        <div class="bar-scroll">
+            <div class="inner medium">
+                <span>
+                    I'm developing this page from scratch by myself — it is
+                    still in progress. ^ ^
+                </span>
+                <span>
+                    I'm developing this page from scratch by myself — it is
+                    still in progress. ^ ^
+                </span>
+                <span>
+                    I'm developing this page from scratch by myself — it is
+                    still in progress. ^ ^
+                </span>
+                <span>
+                    I'm developing this page from scratch by myself — it is
+                    still in progress. ^ ^
+                </span>
+                <span>
+                    I'm developing this page from scratch by myself — it is
+                    still in progress. ^ ^
+                </span>
+                <span>
+                    I'm developing this page from scratch by myself — it is
+                    still in progress. ^ ^
+                </span>
+            </div>
+        </div>
+    </div>
+</aside>

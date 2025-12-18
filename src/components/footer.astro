@@ -1,0 +1,74 @@
+---
+const year = () => new Date().getFullYear();
+const wn = "WQON";
+---
+
+<!-- CSS -->
+<style>
+    footer {
+        display: block;
+        position: relative;
+        width: 100%;
+        background: var(--bg);
+        color: var(--08);
+        line-height: 0.8;
+        border-top: solid 1px var(--08);
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        margin-top: var(--site-gap);
+        z-index: 98;
+    }
+    footer p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-wrapper {
+        display: flex;
+        flex-direction: row;
+        height: var(--footer-gap);
+        width: 100%;
+        padding: 0 var(--site-gap);
+    }
+    .footer-left {
+        display: flex;
+        flex: 1;
+        justify-content: left;
+        align-items: center;
+        text-align: left;
+    }
+    .footer-right {
+        display: flex;
+        flex: 1;
+        justify-content: right;
+        align-items: center;
+        text-align: right;
+    }
+</style>
+
+<!-- HTML -->
+<footer>
+    <div class="footer-wrapper">
+        <div class="footer-left">
+            <span class="medium">
+                © {year()}
+                {wn}. All Rights Reserved.<br />
+                <span class="x-small">
+                    Website designed & developed by Lukáš "{wn}" Nox.
+                </span>
+            </span>
+        </div>
+        <div class="footer-right">
+            <p>
+                <span class="medium">Newsletter.</span>
+                <br />
+                <span class="small">
+                    <a href="/links">Links</a> -
+                    <a href="/legal" class="legal">Legal & Policies</a>
+                </span>
+            </p>
+        </div>
+    </div>
+</footer>
+<!-- Designed & developed by Lukáš "WQON" Nox! -->
