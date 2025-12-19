@@ -34,6 +34,7 @@
     --footer-gap: 64px;
     --nav-active: #fcfcfc;
     --fade: all 1s ease;
+    --fade-fast: all 0.4s ease;
 }
 ::selection {
     background: var(--accent-soft);
@@ -74,11 +75,9 @@ html {
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    overflow-X: hidden;
-    overflow-Y: auto;
     white-space: normal;
     min-height: 100vh;
-    width: 100%;
+    max-width: 100vw;
     padding: 0;
     margin: 0;
 }
@@ -87,6 +86,8 @@ header {
 }
 main {
     grid-row: 2;
+    overflow-x: clip;
+    overflow-y: clip;
     padding-top: calc(var(--bar-gap) + var(--header-gap));
 }
 footer {

@@ -33,7 +33,8 @@
         border-left: solid 1px var(--08);
     }
     .portfolio:has(#PixelDragons:target) .pf-nav a[href="#PixelDragons"],
-    .portfolio:has([id="8BitDrake"]:target) .pf-nav a[href="#8BitDrake"] {
+    .portfolio:has([id="8BitDrake"]:target) .pf-nav a[href="#8BitDrake"],
+    .portfolio:has(#PixelFonts:target) .pf-nav a[href="#PixelFonts"] {
         background: var(--nav-active);
     }
     [id] {
@@ -46,12 +47,11 @@
         display: grid;
         grid-template-rows: fit-content(1fr) 1fr;
         border-top: solid 1px var(--08);
+        padding-bottom: calc(2 * var(--site-gap));
     }
     .pf-wrapper:first-of-type {
         border-top: none;
-    }
-    .pf-wrapper:last-of-type {
-        border-bottom: solid 1px var(--08);
+        padding-bottom: 0;
     }
     .pf-header {
         padding: var(--site-gap);
@@ -61,23 +61,123 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 0;
     }
-    .portfolio figure {
+    .pf-gallery figure {
         display: flex;
         flex-flow: column;
         cursor: zoom-in;
-        transition: all 0.1s ease;
+        overflow: hidden;
     }
-    .portfolio figure:hover {
+    .pf-gallery figure:hover img {
         transform: scale(104%);
+    }
+    .pf-gallery figcaption {
+        text-align: center;
+        font-size: var(--normal);
+        line-height: var(--gap);
+        padding: var(--small) var(--x-small);
+        margin: 0;
     }
     .pflb-img {
         image-rendering: pixelated;
         image-rendering: crisp-edges;
+        transition: var(--fade-fast);
     }
-    .portfolio figcaption {
-        text-align: center;
-        font-size: var(--normal);
-        padding: var(--small) var(--x-small);
+    #PixelFonts figure {
+        cursor: pointer;
+    }
+    #PixelFonts figure img {
+        image-rendering: smooth;
+        transition: var(--fade-fast);
+    }
+    #PixelFonts figure:hover img {
+        opacity: 0;
+    }
+    #minibyte {
+        background-image: url("/portfolio/PixelFonts/minibyte-panem.png");
+        background-size: cover;
+        background-position: center;
+    }
+    #EXSpace {
+        background-image: url("/portfolio/PixelFonts/EXSpace-panem.png");
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* LIGHTBOX */
+    .pflb {
+        display: none;
+        grid-template-rows: 1fr auto;
+        grid-template-columns: 1fr;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        justify-items: center;
+        align-items: center;
+        backdrop-filter: blur(8px) grayscale(100%) brightness(16%);
+        z-index: 101;
+    }
+    .pflb.open {
+        display: grid;
+    }
+    .pflb img {
+        grid-row: 1;
+        grid-column: 1;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+        height: auto;
+        width: calc(32 * var(--gap));
+    }
+    .pflb-wrapper {
+        grid-row: 2;
+        grid-column: 1;
+        display: grid;
+        grid-template-rows: calc(var(--header-gap) + var(--footer-gap)) var(
+                --header-gap
+            );
+        justify-items: center;
+        align-items: center;
+        position: relative;
+        bottom: 0;
+        width: 100vw;
+        color: var(--cc);
+        background: rgba(252, 252, 252, 16%);
+        border-top: solid 1px var(--cc);
+    }
+    .pflb-alt {
+        font-size: var(--medium);
+    }
+    .pflb-nav {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+        font-size: var(--medium);
+        font-weight: bold;
+        border-top: solid 1px var(--cc);
+    }
+    .pflb-nav div {
+        display: flex;
+        flex: 1;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-right: solid 1px var(--cc);
+        transition: var(--fade);
+    }
+    .pflb-nav div:last-child {
+        border: none;
+    }
+    .pflb-nav div:hover {
+        background: rgba(255, 255, 99, 36%);
+    }
+    .pflb-close:hover {
+        background: var(--accent-soft) !important;
+        color: var(--08);
     }
 </style>
 
@@ -105,7 +205,7 @@
             <!-- Breeze of Skies -->
             <figure>
                 <img
-                    src="/portfolio/pixel-dragons/P2.png"
+                    src="/portfolio/PixelDragons/P2.png"
                     class="pflb-img"
                     alt="Breeze of Skies — 2025, 210x297px, 6 colors"
                 />
@@ -116,7 +216,7 @@
             <!-- The Spark Caster -->
             <figure>
                 <img
-                    src="/portfolio/pixel-dragons/P3.png"
+                    src="/portfolio/PixelDragons/P3.png"
                     class="pflb-img"
                     alt="The Spark Caster — 2025, 210x297px, 6 colors"
                 />
@@ -127,7 +227,7 @@
             <!-- Dragonfly -->
             <figure>
                 <img
-                    src="/portfolio/pixel-dragons/P4.png"
+                    src="/portfolio/PixelDragons/P4.png"
                     class="pflb-img"
                     alt="Dragonfly — 2025, 210x297px, 5 colors"
                 />
@@ -138,9 +238,9 @@
             <!-- Woodland Mage -->
             <figure>
                 <img
-                    src="/portfolio/pixel-dragons/P7.webp"
+                    src="/portfolio/PixelDragons/P7.webp"
                     class="pflb-img"
-                    alr="Woodland Mage — 2025, 210x297px, 15 colors, 12 frames"
+                    alt="Woodland Mage — 2025, 210x297px, 15 colors, 12 frames"
                 />
                 <figcaption style="color: #2FAB2B; background: #125946">
                     Woodland Mage — 2025, 210x297px, 15 colors, 12 frames
@@ -162,7 +262,7 @@
             <!-- No.1 -->
             <figure>
                 <img
-                    src="/portfolio/8bitdrake/No.1.png"
+                    src="/portfolio/8BitDrake/No.1.png"
                     class="pflb-img"
                     alt="#8BitDrake No.1 has been hatched and beginning his journey."
                 />
@@ -170,7 +270,7 @@
             <!-- No.2 -->
             <figure>
                 <img
-                    src="/portfolio/8bitdrake/No.2.png"
+                    src="/portfolio/8BitDrake/No.2.png"
                     class="pflb-img"
                     alt="#8BitDrake No.2 is racing through the sky with his friend."
                 />
@@ -178,15 +278,51 @@
             <!-- No.3 -->
             <figure>
                 <img
-                    src="/portfolio/8bitdrake/No.3.png"
+                    src="/portfolio/8BitDrake/No.3.png"
                     class="pflb-img"
                     alt="#8BitDrake No.3 and his cat are watching dragonets fly and play."
                 />
             </figure>
         </div>
     </div>
-    <!-- LIGHTBOX -->
-    <div class="pf-lightbox">
-        <img src="" />
+    <!-- Pixel Fonts -->
+    <div
+        class="pf-wrapper"
+        id="PixelFonts"
+        style="color: #585DE9; background: #E9E458;"
+    >
+        <div class="pf-header">
+            <h1>Pixel Fonts</h1>
+            <p>Text</p>
+        </div>
+        <div class="pf-gallery">
+            <figure id="minibyte">
+                <img
+                    src="/portfolio/PixelFonts/minibyte-thumb.png"
+                    class="pflb-img"
+                />
+            </figure>
+            <figure id="EXSpace">
+                <img
+                    src="/portfolio/PixelFonts/EXSpace-thumb.png"
+                    class="pflb-img"
+                />
+            </figure>
+        </div>
     </div>
 </section>
+
+<!-- LIGHTBOX -->
+<style></style>
+<div draggable="false" class="pflb">
+    <img src="" alt="" />
+    <div class="pflb-wrapper">
+        <div class="pflb-alt"></div>
+        <div class="pflb-nav">
+            <div class="pflb-left">←</div>
+            <div class="pflb-close">×</div>
+            <div class="pflb-right">→</div>
+        </div>
+    </div>
+</div>
+<script type="module" src="/src/scripts/pflb.js"></script>
