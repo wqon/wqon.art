@@ -1,13 +1,59 @@
 <!-- CSS -->
 <style>
+    /* NAVIGATION */
+    .pf-nav {
+        display: flex;
+        flex-flow: row;
+        position: sticky;
+        top: calc(var(--bar-gap) + var(--header-gap) - 1px);
+        font-size: var(--medium);
+        background: rgba(204, 204, 204, 0.6);
+        backdrop-filter: blur(8px);
+        border-top: solid 1px var(--08);
+        border-bottom: solid 1px var(--08);
+        z-index: 97;
+    }
+    .pf-nav a {
+        display: flex;
+        flex: 1;
+        height: var(--bar-gap);
+        justify-content: center;
+        align-items: center;
+        line-height: 0;
+        color: var(--08);
+        transition: var(--fade);
+    }
+    .pf-nav a:hover {
+        background: var(--yellow);
+    }
+    .pf-nav a:active {
+        background: var(--fc);
+    }
+    .pf-nav a + a {
+        border-left: solid 1px var(--08);
+    }
+    .portfolio:has(#PixelDragons:target) .pf-nav a[href="#PixelDragons"],
+    .portfolio:has([id="8BitDrake"]:target) .pf-nav a[href="#8BitDrake"] {
+        background: var(--nav-active);
+    }
+    [id] {
+        scroll-margin-top: calc(
+            var(--bar-gap) + var(--header-gap) + var(--bar-gap)
+        );
+    }
+    /* PORTFOLIO */
     .pf-wrapper {
         display: grid;
         grid-template-rows: fit-content(1fr) 1fr;
-        overflow: hidden;
+        border-top: solid 1px var(--08);
+    }
+    .pf-wrapper:first-of-type {
+        border-top: none;
+    }
+    .pf-wrapper:last-of-type {
+        border-bottom: solid 1px var(--08);
     }
     .pf-header {
-        border-top: 1px solid var(--08);
-        border-bottom: 1px solid var(--08);
         padding: var(--site-gap);
     }
     .pf-gallery {
@@ -37,13 +83,26 @@
 
 <!-- HTML -->
 <section class="portfolio">
+    <nav class="pf-nav">
+        <a href="#PixelDragons">#PixelDragons</a>
+        <a href="#8BitDrake">#8BitDrake</a>
+        <a href="#PixelFonts">#PixelFonts</a>
+        <a href="#ClientWork">#ClientWork</a>
+        <a href="#Sketches">#Sketches</a>
+        <a href="#ProcessGIFs">#ProcessGIFs</a>
+    </nav>
     <!-- #PixelDragons -->
-    <div class="pf-wrapper">
+    <div
+        class="pf-wrapper"
+        id="PixelDragons"
+        style="color: #001C42; background: #63A4FF;"
+    >
         <div class="pf-header">
             <h1>Pixel Dragons</h1>
             <p>Text</p>
         </div>
         <div class="pf-gallery">
+            <!-- Breeze of Skies -->
             <figure>
                 <img
                     src="/portfolio/pixel-dragons/P2.png"
@@ -54,6 +113,7 @@
                     Breeze of Skies — 2025, 210x297px, 6 colors
                 </figcaption>
             </figure>
+            <!-- The Spark Caster -->
             <figure>
                 <img
                     src="/portfolio/pixel-dragons/P3.png"
@@ -64,11 +124,64 @@
                     The Spark Caster — 2025, 210x297px, 6 colors
                 </figcaption>
             </figure>
+            <!-- Dragonfly -->
             <figure>
-                <img src="/portfolio/pixel-dragons/P4.png" class="pflb-img" />
+                <img
+                    src="/portfolio/pixel-dragons/P4.png"
+                    class="pflb-img"
+                    alt="Dragonfly — 2025, 210x297px, 5 colors"
+                />
+                <figcaption style="color: #15AC83; background: #43F8DB">
+                    Dragonfly — 2025, 210x297px, 5 colors
+                </figcaption>
             </figure>
+            <!-- Woodland Mage -->
             <figure>
-                <img src="/portfolio/pixel-dragons/P2.png" class="pflb-img" />
+                <img
+                    src="/portfolio/pixel-dragons/P7.webp"
+                    class="pflb-img"
+                    alr="Woodland Mage — 2025, 210x297px, 15 colors, 12 frames"
+                />
+                <figcaption style="color: #2FAB2B; background: #125946">
+                    Woodland Mage — 2025, 210x297px, 15 colors, 12 frames
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <!-- #8BitDrake -->
+    <div
+        class="pf-wrapper"
+        id="8BitDrake"
+        style="color: #6B5CF5; background: #020226;"
+    >
+        <div class="pf-header">
+            <h1>#8BitDrake</h1>
+            <p>Text</p>
+        </div>
+        <div class="pf-gallery">
+            <!-- No.1 -->
+            <figure>
+                <img
+                    src="/portfolio/8bitdrake/No.1.png"
+                    class="pflb-img"
+                    alt="#8BitDrake No.1 has been hatched and beginning his journey."
+                />
+            </figure>
+            <!-- No.2 -->
+            <figure>
+                <img
+                    src="/portfolio/8bitdrake/No.2.png"
+                    class="pflb-img"
+                    alt="#8BitDrake No.2 is racing through the sky with his friend."
+                />
+            </figure>
+            <!-- No.3 -->
+            <figure>
+                <img
+                    src="/portfolio/8bitdrake/No.3.png"
+                    class="pflb-img"
+                    alt="#8BitDrake No.3 and his cat are watching dragonets fly and play."
+                />
             </figure>
         </div>
     </div>

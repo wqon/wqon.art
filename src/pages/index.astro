@@ -1,7 +1,7 @@
 ---
 import Head from "../components/head.astro";
 import Header from "../components/header.astro";
-import Pixelviewer from "../components/pixelviewer.astro";
+import Promo from "../components/promo-art.astro";
 import Portfolio from "../components/portfolio.astro";
 import Footer from "../components/footer.astro";
 
@@ -15,14 +15,14 @@ const pageTitle = "Portfolio | Original Pixel Art, Dragons & Comics - WQON";
         <Head />
         <style is:global>
             .art {
-                background: var(--menu-active) !important;
+                background: var(--nav-active) !important;
             }
         </style>
     </head>
     <body>
         <Header />
         <main>
-            <Pixelviewer />
+            <Promo />
             <Portfolio />
         </main>
         <Footer />

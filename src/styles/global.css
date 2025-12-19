@@ -24,12 +24,16 @@
     --section-small: 36vh;
     --section-medium: 63vh;
     --section-large: 88vh;
+    --h1: 2.4rem;
+    --h2: 2.2rem;
+    --h3: 2rem;
     --gap: 1rem;
     --bar-gap: 48px;
     --site-gap: 3rem;
     --header-gap: 96px;
     --footer-gap: 64px;
-    --menu-active: #fcfcfc;
+    --nav-active: #fcfcfc;
+    --fade: all 1s ease;
 }
 ::selection {
     background: var(--accent-soft);
@@ -57,6 +61,7 @@
     box-sizing: border-box;
     overflow-wrap: break-word;
     scrollbar-color: var(--88) transparent;
+    scroll-behavior: smooth;
 }
 html {
     background: var(--bg);
@@ -69,7 +74,8 @@ html {
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    overflow: auto;
+    overflow-X: hidden;
+    overflow-Y: auto;
     white-space: normal;
     min-height: 100vh;
     width: 100%;
@@ -133,26 +139,29 @@ footer {
 
 /* ELEMENTS */
 h1 {
-    font-size: var(--x-large);
+    font-size: var(--h1);
 }
 h2 {
-    font-size: var(--large);
+    font-size: var(--h2);
 }
 h3 {
-    font-size: var(--medium);
+    font-size: var(--h3);
 }
 h4,
 h5,
 h6 {
-    font-size: var(--normal);
+    font-size: var(--medium);
 }
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-    line-height: 0.4;
+h6,
+p {
+    line-height: auto;
+    padding: 0;
+    margin: 0;
 }
 
 a {
