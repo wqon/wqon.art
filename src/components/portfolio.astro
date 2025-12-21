@@ -34,7 +34,8 @@
     }
     .portfolio:has(#PixelDragons:target) .pf-nav a[href="#PixelDragons"],
     .portfolio:has([id="8BitDrake"]:target) .pf-nav a[href="#8BitDrake"],
-    .portfolio:has(#PixelFonts:target) .pf-nav a[href="#PixelFonts"] {
+    .portfolio:has(#PixelFonts:target) .pf-nav a[href="#PixelFonts"],
+    .portfolio:has(#ClientWork:target) .pf-nav a[href="#ClientWork"] {
         background: var(--nav-active);
     }
     [id] {
@@ -68,14 +69,18 @@
         overflow: hidden;
     }
     .pf-gallery figure:hover img {
-        transform: scale(104%);
+        transform: scale(1.04);
     }
     .pf-gallery figcaption {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: var(--large);
         text-align: center;
-        font-size: var(--normal);
+        font-size: var(--small);
         line-height: var(--gap);
-        padding: var(--small) var(--x-small);
         margin: 0;
+        z-index: 2;
     }
     .pflb-img {
         image-rendering: pixelated;
@@ -259,26 +264,26 @@
             <p>Text</p>
         </div>
         <div class="pf-gallery">
-            <!-- No.1 -->
+            <!-- No1 -->
             <figure>
                 <img
-                    src="/portfolio/8BitDrake/No.1.png"
+                    src="/portfolio/8BitDrake/No1.png"
                     class="pflb-img"
                     alt="#8BitDrake No.1 has been hatched and beginning his journey."
                 />
             </figure>
-            <!-- No.2 -->
+            <!-- No2 -->
             <figure>
                 <img
-                    src="/portfolio/8BitDrake/No.2.png"
+                    src="/portfolio/8BitDrake/No2.png"
                     class="pflb-img"
                     alt="#8BitDrake No.2 is racing through the sky with his friend."
                 />
             </figure>
-            <!-- No.3 -->
+            <!-- No3 -->
             <figure>
                 <img
-                    src="/portfolio/8BitDrake/No.3.png"
+                    src="/portfolio/8BitDrake/No3.png"
                     class="pflb-img"
                     alt="#8BitDrake No.3 and his cat are watching dragonets fly and play."
                 />
@@ -296,18 +301,57 @@
             <p>Text</p>
         </div>
         <div class="pf-gallery">
+            <!-- wnt minibyte -->
             <figure id="minibyte">
                 <img
                     src="/portfolio/PixelFonts/minibyte-thumb.png"
                     class="pflb-img"
                 />
             </figure>
+            <!-- WNT EXSpace -->
             <figure id="EXSpace">
                 <img
                     src="/portfolio/PixelFonts/EXSpace-thumb.png"
                     class="pflb-img"
                 />
             </figure>
+        </div>
+    </div>
+    <!-- Client Work -->
+    <div class="pf-wrapper" id="ClientWork">
+        <div class="pf-header">
+            <h1>Client Work</h1>
+            <p>Text</p>
+        </div>
+        <div class="pf-gallery">
+            <!-- Pixblr banner -->
+            <figure>
+                <img
+                    src="/portfolio/ClientWork/pixblr-intro.gif"
+                    class="pflb-img"
+                    alt="Banner I made for the Pixblr, a pixel-art community on
+                    Tumblr."
+                />
+                <a
+                    href="https://www.tumblr.com/communities/pixblr"
+                    target="_blank"
+                >
+                    <figcaption style="color: #15896F; background: #1C2D48">
+                        Banner I made for the Pixblr, a pixel-art community on
+                        Tumblr.
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
+    </div>
+    <!-- Sketches & Studies -->
+    <div class="pf-wrapper">
+        <div class="pf-header">
+            <h1>Sketches & Studies</h1>
+            <p>Text</p>
+        </div>
+        <div class="pf-gallery">
+            
         </div>
     </div>
 </section>
@@ -325,4 +369,4 @@
         </div>
     </div>
 </div>
-<script type="module" src="/src/scripts/pflb.js"></script>
+<script src="/src/scripts/pflb.js"></script>

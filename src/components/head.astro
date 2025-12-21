@@ -5,8 +5,7 @@ import "../scripts/global.js";
 const wn = "WQON";
 ---
 
-<!-- META -->
-<!-- Designed & developed by Lukáš "WQON" Nox! -->
+<!-- META --><!-- Designed & developed by Lukáš "WQON" Nox! -->
 <meta charset="utf-8" />
 <meta
     name="keywords"
@@ -23,8 +22,11 @@ const wn = "WQON";
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="WQON" />
 <link rel="manifest" href="/site.webmanifest" />
-<script type="text/javascript">
-document.addEventListener('dragstart', function (event) {
-  event.preventDefault();
-});
+
+<!-- JS -->
+<script>
+    // Prevent element dragging.
+    document.addEventListener("dragstart", function (event) {
+        event.preventDefault();
+    });
 </script>
