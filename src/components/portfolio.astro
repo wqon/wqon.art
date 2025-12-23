@@ -1,16 +1,19 @@
 <!-- CSS -->
 <style>
     /* NAVIGATION */
+    .portfolio {
+        display: grid;
+        grid-template-columns: calc(var(--header-gap) * 2) 1fr;
+    }
     .pf-nav {
         display: flex;
-        flex-flow: row;
+        flex-flow: column;
         position: sticky;
-        top: calc(var(--bar-gap) + var(--header-gap) - 1px);
+        top: 0;
+        bottom: 0;
+        height: 100vh;
         font-size: var(--medium);
-        background: rgba(204, 204, 204, 0.6);
-        backdrop-filter: blur(8px);
-        border-top: solid 1px var(--08);
-        border-bottom: solid 1px var(--08);
+        border-right: solid 1px var(--08);
         z-index: 97;
     }
     .pf-nav a {
@@ -25,18 +28,19 @@
     }
     .pf-nav a:hover {
         background: var(--yellow);
+        outline: solid 1px var(--08);
     }
     .pf-nav a:active {
         background: var(--fc);
-    }
-    .pf-nav a + a {
-        border-left: solid 1px var(--08);
+        outline: solid 1px var(--08);
     }
     .portfolio:has(#PixelDragons:target) .pf-nav a[href="#PixelDragons"],
     .portfolio:has([id="8BitDrake"]:target) .pf-nav a[href="#8BitDrake"],
     .portfolio:has(#PixelFonts:target) .pf-nav a[href="#PixelFonts"],
-    .portfolio:has(#ClientWork:target) .pf-nav a[href="#ClientWork"] {
-        background: var(--nav-active);
+    .portfolio:has(#ClientWork:target) .pf-nav a[href="#ClientWork"],
+    .portfolio:has(#Sketches:target) .pf-nav a[href="#Sketches"] {
+        background: var(--fc);
+        outline: solid 1px var(--08);
     }
     [id] {
         scroll-margin-top: calc(
@@ -46,7 +50,7 @@
     /* PORTFOLIO */
     .pf-wrapper {
         display: grid;
-        grid-template-rows: fit-content(1fr) 1fr;
+        grid-template-rows: auto 1fr;
         border-top: solid 1px var(--08);
         padding-bottom: calc(2 * var(--site-gap));
     }
@@ -54,12 +58,15 @@
         border-top: none;
         padding-bottom: 0;
     }
+    .pf-wrapper:last-of-type {
+        padding-bottom: 0;
+    }
     .pf-header {
         padding: var(--site-gap);
     }
     .pf-gallery {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 0;
     }
     .pf-gallery figure {
@@ -87,6 +94,8 @@
         image-rendering: crisp-edges;
         transition: var(--fade-fast);
     }
+
+    /* #PixelFonts */
     #PixelFonts figure {
         cursor: pointer;
     }
@@ -106,6 +115,18 @@
         background-image: url("/portfolio/PixelFonts/EXSpace-panem.png");
         background-size: cover;
         background-position: center;
+    }
+
+    /* #Sketches */
+    #Sketches figure {
+        aspect-ratio: 1/1;
+    }
+    #Sketches figure img {
+        object-fit: cover;
+        object-position: top;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
     }
 
     /* LIGHTBOX */
@@ -196,162 +217,207 @@
         <a href="#Sketches">#Sketches</a>
         <a href="#ProcessGIFs">#ProcessGIFs</a>
     </nav>
-    <!-- #PixelDragons -->
-    <div
-        class="pf-wrapper"
-        id="PixelDragons"
-        style="color: #001C42; background: #63A4FF;"
-    >
-        <div class="pf-header">
-            <h1>Pixel Dragons</h1>
-            <p>Text</p>
-        </div>
-        <div class="pf-gallery">
-            <!-- Breeze of Skies -->
-            <figure>
-                <img
-                    src="/portfolio/PixelDragons/P2.png"
-                    class="pflb-img"
-                    alt="Breeze of Skies — 2025, 210x297px, 6 colors"
-                />
-                <figcaption style="color: #FFBE63; background: #63A4FF">
-                    Breeze of Skies — 2025, 210x297px, 6 colors
-                </figcaption>
-            </figure>
-            <!-- The Spark Caster -->
-            <figure>
-                <img
-                    src="/portfolio/PixelDragons/P3.png"
-                    class="pflb-img"
-                    alt="The Spark Caster — 2025, 210x297px, 6 colors"
-                />
-                <figcaption style="color: #FFF475; background: #FFAF75">
-                    The Spark Caster — 2025, 210x297px, 6 colors
-                </figcaption>
-            </figure>
-            <!-- Dragonfly -->
-            <figure>
-                <img
-                    src="/portfolio/PixelDragons/P4.png"
-                    class="pflb-img"
-                    alt="Dragonfly — 2025, 210x297px, 5 colors"
-                />
-                <figcaption style="color: #15AC83; background: #43F8DB">
-                    Dragonfly — 2025, 210x297px, 5 colors
-                </figcaption>
-            </figure>
-            <!-- Woodland Mage -->
-            <figure>
-                <img
-                    src="/portfolio/PixelDragons/P7.webp"
-                    class="pflb-img"
-                    alt="Woodland Mage — 2025, 210x297px, 15 colors, 12 frames"
-                />
-                <figcaption style="color: #2FAB2B; background: #125946">
-                    Woodland Mage — 2025, 210x297px, 15 colors, 12 frames
-                </figcaption>
-            </figure>
-        </div>
-    </div>
-    <!-- #8BitDrake -->
-    <div
-        class="pf-wrapper"
-        id="8BitDrake"
-        style="color: #6B5CF5; background: #020226;"
-    >
-        <div class="pf-header">
-            <h1>#8BitDrake</h1>
-            <p>Text</p>
-        </div>
-        <div class="pf-gallery">
-            <!-- No1 -->
-            <figure>
-                <img
-                    src="/portfolio/8BitDrake/No1.png"
-                    class="pflb-img"
-                    alt="#8BitDrake No.1 has been hatched and beginning his journey."
-                />
-            </figure>
-            <!-- No2 -->
-            <figure>
-                <img
-                    src="/portfolio/8BitDrake/No2.png"
-                    class="pflb-img"
-                    alt="#8BitDrake No.2 is racing through the sky with his friend."
-                />
-            </figure>
-            <!-- No3 -->
-            <figure>
-                <img
-                    src="/portfolio/8BitDrake/No3.png"
-                    class="pflb-img"
-                    alt="#8BitDrake No.3 and his cat are watching dragonets fly and play."
-                />
-            </figure>
-        </div>
-    </div>
-    <!-- Pixel Fonts -->
-    <div
-        class="pf-wrapper"
-        id="PixelFonts"
-        style="color: #585DE9; background: #E9E458;"
-    >
-        <div class="pf-header">
-            <h1>Pixel Fonts</h1>
-            <p>Text</p>
-        </div>
-        <div class="pf-gallery">
-            <!-- wnt minibyte -->
-            <figure id="minibyte">
-                <img
-                    src="/portfolio/PixelFonts/minibyte-thumb.png"
-                    class="pflb-img"
-                />
-            </figure>
-            <!-- WNT EXSpace -->
-            <figure id="EXSpace">
-                <img
-                    src="/portfolio/PixelFonts/EXSpace-thumb.png"
-                    class="pflb-img"
-                />
-            </figure>
-        </div>
-    </div>
-    <!-- Client Work -->
-    <div class="pf-wrapper" id="ClientWork">
-        <div class="pf-header">
-            <h1>Client Work</h1>
-            <p>Text</p>
-        </div>
-        <div class="pf-gallery">
-            <!-- Pixblr banner -->
-            <figure>
-                <img
-                    src="/portfolio/ClientWork/pixblr-intro.gif"
-                    class="pflb-img"
-                    alt="Banner I made for the Pixblr, a pixel-art community on
-                    Tumblr."
-                />
-                <a
-                    href="https://www.tumblr.com/communities/pixblr"
-                    target="_blank"
-                >
-                    <figcaption style="color: #15896F; background: #1C2D48">
-                        Banner I made for the Pixblr, a pixel-art community on
-                        Tumblr.
+    <div class="pf-content">
+        <!-- #PixelDragons -->
+        <div
+            class="pf-wrapper"
+            id="PixelDragons"
+            style="color: #001C42; background: #63A4FF;"
+        >
+            <div class="pf-header">
+                <h1>Pixel Dragons</h1>
+                <p>Text</p>
+            </div>
+            <div class="pf-gallery">
+                <!-- Breeze of Skies -->
+                <figure>
+                    <img
+                        src="/portfolio/PixelDragons/P2.png"
+                        class="pflb-img"
+                        alt="Breeze of Skies — 2025, 210x297px, 6 colors"
+                    />
+                    <figcaption style="color: #FFBE63; background: #63A4FF">
+                        Breeze of Skies — 2025, 210x297px, 6 colors
                     </figcaption>
-                </a>
-            </figure>
+                </figure>
+                <!-- The Spark Caster -->
+                <figure>
+                    <img
+                        src="/portfolio/PixelDragons/P3.png"
+                        class="pflb-img"
+                        alt="The Spark Caster — 2025, 210x297px, 6 colors"
+                    />
+                    <figcaption style="color: #FFF475; background: #FFAF75">
+                        The Spark Caster — 2025, 210x297px, 6 colors
+                    </figcaption>
+                </figure>
+                <!-- Dragonfly -->
+                <figure>
+                    <img
+                        src="/portfolio/PixelDragons/P4.png"
+                        class="pflb-img"
+                        alt="Dragonfly — 2025, 210x297px, 5 colors"
+                    />
+                    <figcaption style="color: #15AC83; background: #43F8DB">
+                        Dragonfly — 2025, 210x297px, 5 colors
+                    </figcaption>
+                </figure>
+                <!-- Woodland Mage -->
+                <figure>
+                    <img
+                        src="/portfolio/PixelDragons/P7.webp"
+                        class="pflb-img"
+                        alt="Woodland Mage — 2025, 210x297px, 15 colors, 12 frames"
+                    />
+                    <figcaption style="color: #2FAB2B; background: #125946">
+                        Woodland Mage — 2025, 210x297px, 15 colors, 12 frames
+                    </figcaption>
+                </figure>
+            </div>
         </div>
-    </div>
-    <!-- Sketches & Studies -->
-    <div class="pf-wrapper">
-        <div class="pf-header">
-            <h1>Sketches & Studies</h1>
-            <p>Text</p>
+        <!-- #8BitDrake -->
+        <div
+            class="pf-wrapper"
+            id="8BitDrake"
+            style="color: #6B5CF5; background: #020226;"
+        >
+            <div class="pf-header">
+                <h1>8BitDrake</h1>
+                <p>Text</p>
+            </div>
+            <div class="pf-gallery">
+                <!-- No1 -->
+                <figure>
+                    <img
+                        src="/portfolio/8BitDrake/No1.png"
+                        class="pflb-img"
+                        alt="#8BitDrake No.1 has been hatched and beginning his journey."
+                    />
+                </figure>
+                <!-- No2 -->
+                <figure>
+                    <img
+                        src="/portfolio/8BitDrake/No2.png"
+                        class="pflb-img"
+                        alt="#8BitDrake No.2 is racing through the sky with his friend."
+                    />
+                </figure>
+                <!-- No3 -->
+                <figure>
+                    <img
+                        src="/portfolio/8BitDrake/No3.png"
+                        class="pflb-img"
+                        alt="#8BitDrake No.3 and his cat are watching dragonets fly and play."
+                    />
+                </figure>
+            </div>
         </div>
-        <div class="pf-gallery">
-            
+        <!-- Pixel Fonts -->
+        <div
+            class="pf-wrapper"
+            id="PixelFonts"
+            style="color: #585DE9; background: #E9E458;"
+        >
+            <div class="pf-header">
+                <h1>Pixel Fonts</h1>
+                <p>Text</p>
+            </div>
+            <div class="pf-gallery">
+                <!-- wnt minibyte -->
+                <figure id="minibyte">
+                    <img
+                        src="/portfolio/PixelFonts/minibyte-thumb.png"
+                        class="pflb-img"
+                    />
+                </figure>
+                <!-- WNT EXSpace -->
+                <figure id="EXSpace">
+                    <img
+                        src="/portfolio/PixelFonts/EXSpace-thumb.png"
+                        class="pflb-img"
+                    />
+                </figure>
+            </div>
+        </div>
+        <!-- Client Work -->
+        <div class="pf-wrapper" id="ClientWork">
+            <div class="pf-header">
+                <h1>Client Work</h1>
+                <p>Text</p>
+            </div>
+            <div class="pf-gallery">
+                <!-- Pixblr banner -->
+                <figure>
+                    <img
+                        src="/portfolio/ClientWork/pixblr-intro.gif"
+                        class="pflb-img"
+                        alt="Banner I made for the Pixblr, a pixel-art community on
+                    Tumblr."
+                    />
+                    <a
+                        href="https://www.tumblr.com/communities/pixblr"
+                        target="_blank"
+                    >
+                    </a>
+                </figure>
+            </div>
+        </div>
+        <!-- Sketches & Studies -->
+        <div class="pf-wrapper" id="Sketches">
+            <div class="pf-header">
+                <h1>Sketches & Studies</h1>
+                <p>Text</p>
+            </div>
+            <div class="pf-gallery">
+                <!-- S2 -->
+                <figure>
+                    <img
+                        src="/portfolio/Sketches/S2.png"
+                        class="pflb-img"
+                        alt="Study of clouds above my beloved place — 2025, 148x210px"
+                    />
+                </figure>
+                <!-- S1 -->
+                <figure>
+                    <img
+                        src="/portfolio/Sketches/S1.png"
+                        class="pflb-img"
+                        alt="Study of a rosehip fruits — 2025, 180x180px"
+                    />
+                </figure>
+                <!-- P1 -->
+                <figure>
+                    <img
+                        src="/portfolio/Sketches/P1.png"
+                        class="pflb-img"
+                        alt="Character study — 2025, 190x266px"
+                    />
+                </figure>
+                <!-- #1 - Miniature Garden -->
+                <figure>
+                    <img
+                        src="/portfolio/Sketches/1-MiniatureGarden.png"
+                        class="pflb-img"
+                        alt="Entry for #pixel_dailies — #MiniatureGarden, 2025, 148x105px"
+                    />
+                </figure>
+                <!-- Lovers -->
+                <figure>
+                    <img
+                        src="/portfolio/Sketches/P5.png"
+                        class="pflb-img"
+                        alt='"Lovers" was crafted to support LGBTQ+ community — 2025, 297x420px, 8 colors'
+                    />
+                </figure>
+                <!-- #2 - Acorn -->
+                <figure>
+                    <img
+                        src="/portfolio/Sketches/2-Acorn.png"
+                        class="pflb-img"
+                        alt="Entry for #pixel_dailies — #Acorn, 2025, 148x105px"
+                    />
+                </figure>
+            </div>
         </div>
     </div>
 </section>

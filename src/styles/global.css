@@ -28,13 +28,14 @@
     --h2: 2.2rem;
     --h3: 2rem;
     --gap: 1rem;
-    --bar-gap: 48px;
+    --bar-gap: 3rem;
     --site-gap: 3rem;
-    --header-gap: 96px;
-    --footer-gap: 64px;
+    --header-gap: 6rem;
+    --footer-gap: 4rem;
     --nav-active: #fcfcfc;
     --fade: all 1s ease;
     --fade-fast: all 0.4s ease;
+    --fade-slow: all 3.6s ease;
 }
 ::selection {
     background: var(--accent-soft);
@@ -58,6 +59,27 @@
     background: var(--fc);
 }
 
+/* SITE LAYOUT */
+.wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+.left {
+    grid-column: 1;
+}
+.right {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+.content {
+    grid-row: 1;
+}
+footer {
+    grid-row: 2;
+}
+
+/* * */
 * {
     box-sizing: border-box;
     overflow-wrap: break-word;
@@ -73,8 +95,6 @@ html {
     margin: 0;
 }
 body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
     font-family: sans-serif;
     white-space: normal;
     min-height: 100vh;
@@ -82,17 +102,9 @@ body {
     padding: 0;
     margin: 0;
 }
-header {
-    grid-row: 1;
-}
 main {
-    grid-row: 2;
     overflow-x: clip;
     overflow-y: clip;
-    padding-top: calc(var(--bar-gap) + var(--header-gap));
-}
-footer {
-    grid-row: 3;
 }
 
 /* PRESETS */
@@ -134,9 +146,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(
-        90vh - var(--bar-gap) - var(--header-gap) - var(--footer-gap)
-    );
+    height: calc(90vh - var(--bar-gap) - var(--header-gap) - var(--footer-gap));
 }
 
 /* ELEMENTS */
@@ -207,4 +217,32 @@ img {
 figure {
     padding: 0;
     margin: 0;
+}
+
+/* RESPONSIVE */
+/* Phone. */
+@media (min-width: 0px) and (max-width: 600px) {
+    :root {
+        --h1: 1.8rem;
+        --h2: 1.6rem;
+        --h3: 1.4rem;
+        --gap: 1rem;
+        --site-gap: 1.6rem;
+        --header-gap: 4rem;
+    }
+    html {
+        font-size: 12px;
+    }
+}
+/* Desktop. */
+@media (min-width: 600px) and (max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
+}
+/* TV. */
+@media (min-width: 1200px) and (max-width: 2200px) {
+    html {
+        font-size: 21px;
+    }
 }

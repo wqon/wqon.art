@@ -1,36 +1,19 @@
 <!-- CSS -->
 <style>
     .up {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        left: var(--site-gap);
-        bottom: var(--site-gap);
-        height: calc(var(--footer-gap) / 2);
-        width: calc(var(--footer-gap) / 2);
-        color: var(--08);
-        background: rgba(204, 204, 204, 0.6);
-        outline: solid 1px var(--fc);
-        border-radius: 16%;
-        backdrop-filter: blur(4px);
-        transition: var(--fade);
+        image-rendering: pixelated;
+        height: 100%;
+        transition: var(--fade-fast);
+        pointer-events: auto;
         cursor: n-resize;
-        z-index: 100;
-    }
-    .up span {
-        line-height: 0;
-        font-size: var(--x-large);
     }
     .up:hover {
-        filter: brightness(1);
+        transform: scale(1.4);
     }
 </style>
 
 <!-- HTML -->
-<div class="up">
-    <span>⬆</span>
-</div>
+<img src="/assets/up.png" alt="Up!" class="up" />
 
 <!-- JS -->
 <script>

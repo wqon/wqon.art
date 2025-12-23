@@ -28,24 +28,36 @@ const pageTitle = "Oops.. 404! :( - WQON";
     </head>
 
     <body>
-        <Header />
         <main>
-            <section>
-                <div class="site-gap center" style="text-align: center;">
-                    <h1>Oops! 😱</h1>
-                    <p class="medium">
-                        <span>
-                            The page you are looking for does not exist, sorry.
-                        </span>
-                        <br />
-                        <span>
-                            You will be redirected to <a href="/">home</a> in...
-                        </span>
-                        <span id="oops404"></span>
-                    </p>
+            <div class="wrapper">
+                <div class="left">
+                    <Header />
                 </div>
-            </section>
+                <div class="right">
+                    <section>
+                        <div
+                            class="site-gap center"
+                            style="text-align: center;"
+                        >
+                            <h1>Oops! 😱</h1>
+                            <p class="medium">
+                                <span>
+                                    The page you are looking for does not exist,
+                                    sorry.
+                                </span>
+                                <br />
+                                <span>
+                                    You will be redirected to <a href="/"
+                                        >home</a
+                                    > in...
+                                </span>
+                                <span id="oops404"></span>
+                            </p>
+                        </div>
+                    </section>
+                    <Footer />
+                </div>
+            </div>
         </main>
-        <Footer />
     </body>
 </html>

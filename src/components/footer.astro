@@ -1,4 +1,6 @@
 ---
+import Up from "../components/up.astro";
+
 const year = () => new Date().getFullYear();
 const wn = "WQON";
 ---
@@ -6,15 +8,17 @@ const wn = "WQON";
 <!-- CSS -->
 <style>
     footer {
-        display: block;
-        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(var(--header-gap) * 2);
         width: 100%;
         background: var(--bg);
         color: var(--08);
-        line-height: 0.8;
+        line-height: 1;
         border-top: solid 1px var(--08);
         overflow: hidden;
-        padding: 0;
+        padding: 0 var(--site-gap);
         margin: 0;
         margin-top: 0;
         z-index: 98;
@@ -24,42 +28,70 @@ const wn = "WQON";
         margin: 0;
     }
 
-    .footer-wrapper {
+    .f-wrapper {
         display: flex;
         flex-direction: row;
-        height: var(--footer-gap);
         width: 100%;
-        padding: 0 var(--site-gap);
     }
-    .footer-left {
-        display: flex;
+    .f-left {
         flex: 1;
+        display: flex;
         justify-content: left;
         align-items: center;
         text-align: left;
     }
-    .footer-right {
-        display: flex;
+    .f-right {
         flex: 1;
+        display: flex;
         justify-content: right;
         align-items: center;
         text-align: right;
+        gap: calc(var(--header-gap) / 4);
+    }
+    .f-right p {
+        flex: 1;
+    }
+    .f-right .up {
+        flex: 1;
+    }
+
+    /* RESPONSIVE */
+    /* Phone. */
+    @media (min-width: 0px) and (max-width: 600px) {
+        footer {
+            height: calc(var(--header-gap) * 3);
+        }
+        .f-wrapper {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: var(--gap);
+        }
+        .f-left,
+        .f-right {
+            text-align: center;
+        }
+        .f-right {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
     }
 </style>
 
 <!-- HTML -->
 <footer>
-    <div class="footer-wrapper">
-        <div class="footer-left">
+    <div class="f-wrapper">
+        <div class="f-left">
             <span class="medium">
                 © {year()}
                 {wn}. All Rights Reserved.<br />
                 <span class="x-small">
-                    Website designed & developed by Lukáš "{wn}" Nox.
+                    Website designed & developed by myself with &lt3.
                 </span>
             </span>
         </div>
-        <div class="footer-right">
+        <div class="f-right">
             <p>
                 <span class="medium">Newsletter.</span>
                 <br />
@@ -68,6 +100,7 @@ const wn = "WQON";
                     <a href="/legal" class="legal">Legal & Policies</a>
                 </span>
             </p>
+            <Up />
         </div>
     </div>
 </footer>

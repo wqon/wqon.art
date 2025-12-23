@@ -1,9 +1,8 @@
 ---
 import Head from "../components/head.astro";
+import Bar from "../components/bar.astro";
 import Header from "../components/header.astro";
-import PromoViewer from "../components/promoviewer.astro";
 import Portfolio from "../components/portfolio.astro";
-import Up from "../components/up.astro";
 import Footer from "../components/footer.astro";
 
 const pageTitle = "Portfolio | Original Pixel Art, Dragons & Comics - WQON";
@@ -21,12 +20,19 @@ const pageTitle = "Portfolio | Original Pixel Art, Dragons & Comics - WQON";
         </style>
     </head>
     <body>
-        <Header />
-        <main id="top">
-            <PromoViewer />
-            <Portfolio />
+        <main>
+            <div class="wrapper">
+                <div class="left">
+                    <Header />
+                </div>
+                <div class="right">
+                    <div class="content">
+                        <Bar />
+                        <Portfolio />
+                        <Footer />
+                    </div>
+                </div>
+            </div>
         </main>
-        <Footer />
-        <Up />
     </body>
 </html>
