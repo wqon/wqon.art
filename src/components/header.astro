@@ -21,6 +21,7 @@
         height: 100%;
         width: 100%;
         background: var(--accent);
+        cursor: grab;
         transition: var(--fade-slow);
     }
     .wn {
@@ -30,8 +31,8 @@
         mask-position: center;
         background: var(--08);
         image-rendering: pixelated;
-        width: 100%;
         height: 100%;
+        width: 100%;
         transition: var(--fade-slow);
     }
     .h-wn:hover {
@@ -42,6 +43,7 @@
     }
     .h-wn:active {
         background: var(--yellow);
+        cursor: grabbing;
     }
     .wn:active {
         background: var(--blue-soft);
@@ -51,6 +53,7 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        width: 100%;
     }
     .h-nav a {
         writing-mode: vertical-lr;
@@ -62,6 +65,7 @@
         align-items: center;
         justify-content: center;
         height: 100%;
+        width: 100%;
         color: var(--08);
         font-size: var(--medium);
         border-top: solid 1px var(--08);

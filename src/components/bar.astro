@@ -8,10 +8,13 @@
             transform: translateX(-50%);
         }
     }
+    .bar-gap {
+        height: calc(var(--header-gap) / 2);
+    }
     .bar {
-        position: sticky;
+        position: fixed;
         top: 0;
-        left: 0;
+        left: var(--header-gap);
         right: 0;
         overflow: hidden;
         white-space: nowrap;
@@ -57,6 +60,7 @@
 
 <!-- HTML -->
 <aside>
+    <div class="bar-gap"></div>
     <div class="bar">
         <div class="bar-scroll">
             <div class="inner medium">

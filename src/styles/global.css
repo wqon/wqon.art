@@ -62,7 +62,7 @@
 /* SITE LAYOUT */
 .wrapper {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: max-content 1fr;
 }
 .left {
     grid-column: 1;
@@ -70,7 +70,7 @@
 .right {
     grid-column: 2;
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr max-content;
 }
 .content {
     grid-row: 1;
@@ -241,8 +241,8 @@ figure {
     }
 }
 /* TV. */
-@media (min-width: 1200px) and (max-width: 2200px) {
+@media (min-width: 1200px) {
     html {
-        font-size: 21px;
+        font-size: 18px;
     }
 }
